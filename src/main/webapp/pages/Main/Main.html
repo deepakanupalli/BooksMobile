@@ -1,0 +1,36 @@
+<wm-page data-ng-controller="MainPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1" title="MY BOOKS" backbutton="false" backgroundsize="10px, 10px" backgroundposition="center center">
+        <wm-button class="btn-transparent" caption="" type="button" name="addBtn" on-click="goToPage-AddBook" backgroundrepeat="no-repeat" iconclass="fa fa-plus"></wm-button>
+        <wm-anchor name="anchor1" caption="" iconclass="glyphicon glyphicon-user" on-click="goToPage-ProfilePage"></wm-anchor>
+    </wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-segmented-control name="MainContent" on-beforesegmentchange="MainContentBeforeSegmentChange($scope, $old, $new)">
+                <wm-segment-content caption="ALL" name="allBookSegment">
+                    <wm-container name="noBookContainer" show="bind:Variables.allBooks.dataSet.data.length === 0">
+                        <wm-container name="container1" horizontalalign="center" marginbottom="20">
+                            <wm-button class="btn-default" caption="" type="button" name="button1" iconclass="glyphicon glyphicon-plus" paddingtop="40" paddingbottom="40" paddingleft="30" paddingright="30" fontsize="2" fontunit="em" display="inline-block"
+                            textalign="center" backgroundcolor="rgba(0,0,0,0.3)" color="#fff" borderbottom="0" bordertop="0" borderright="0" borderleft="0" margintop="20" bordercolor="#020E1D" on-click="goToPage-AddBook"></wm-button>
+                        </wm-container>
+                        <wm-container name="container6" horizontalalign="center">
+                            <wm-label name="label1" caption="You haven't  added any books yet."></wm-label>
+                        </wm-container>
+                        <wm-container name="container7" horizontalalign="center">
+                            <wm-label caption="Let us know what you read." name="label3"></wm-label>
+                        </wm-container>
+                    </wm-container>
+                    <wm-container name="allBooksPartial" content="BookList" show="true"></wm-container>
+                </wm-segment-content>
+                <wm-segment-content caption="READING" name="readingBookSegment">
+                    <wm-container name="readingBooksPartial" content="BookList"></wm-container>
+                </wm-segment-content>
+                <wm-segment-content caption="WANT TO" name="wantToBookSegment">
+                    <wm-container name="wantToBooksPartial" content="BookList" show="true"></wm-container>
+                </wm-segment-content>
+                <wm-segment-content caption="COMPLETED" name="completedBookSegment">
+                    <wm-container name="readBooksPartial" content="BookList"></wm-container>
+                </wm-segment-content>
+            </wm-segmented-control>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

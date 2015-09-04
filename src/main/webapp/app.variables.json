@@ -1,0 +1,509 @@
+{
+	"goToPage-Main": {
+		"name": "goToPage-Main",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Main",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage-Main-wm.NavigationVariable1389180517517"
+	},
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-supportedLocale-wm.Variable1402640443182"
+	},
+	"goToPage-AddBook": {
+		"name": "goToPage-AddBook",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "AddBook",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage-AddBook-wm.NavigationVariable-1440139205876"
+	},
+	"LIBRARYBookData": {
+		"name": "LIBRARYBookData",
+		"type": "Book",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": true,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "LIBRARY",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "MySQL",
+		"_id": "wm-LIBRARYBookData-wm.LiveVariable-1440140078556",
+		"package": "com.books.library.Book",
+		"tableName": "BOOK",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "id",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "ID",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "identity",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "title",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "TITLE",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "author",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "AUTHOR",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "publisher",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "PUBLISHER",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "isbn",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "ISBN",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "imageUrl",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "IMAGE_URL",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "readStatus",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "READ_STATUS",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "-1"
+				},
+				{
+					"fieldName": "description",
+					"type": "text",
+					"hibernateType": "string",
+					"fullyQualifiedType": "text",
+					"columnName": "DESCRIPTION",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": "null",
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"id"
+			],
+			"entityName": "Book",
+			"fullyQualifiedName": "com.books.library.Book",
+			"tableType": "TABLE"
+		},
+		"bindCount": 1
+	},
+	"goToPage-BookList": {
+		"name": "goToPage-BookList",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "BookList",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage-BookList-wm.NavigationVariable-1440150357779"
+	},
+	"FileServiceUploadFile": {
+		"name": "FileServiceUploadFile",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "FileService",
+		"operation": "uploadFile",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "post",
+			"name": "uploadFile",
+			"relativePath": "/file/uploadFile",
+			"consumes": [
+				"multipart/form-data"
+			],
+			"parameters": [
+				{
+					"name": "files",
+					"parameterType": "formData"
+				},
+				{
+					"name": "relativePath",
+					"parameterType": "query"
+				}
+			]
+		},
+		"_id": "wm-FileServiceUploadFile-wm.ServiceVariable-1440493160390"
+	},
+	"FileServiceGetDownloadFile": {
+		"name": "FileServiceGetDownloadFile",
+		"type": "com.wavemaker.runtime.file.model.DownloadResponse",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "FileService",
+		"operation": "getDownloadFile",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "get",
+			"name": "getDownloadFile",
+			"relativePath": "/file/downloadFile",
+			"parameters": [
+				{
+					"name": "file",
+					"parameterType": "query"
+				},
+				{
+					"name": "returnName",
+					"parameterType": "query"
+				}
+			]
+		},
+		"_id": "wm-FileServiceGetDownloadFile-wm.ServiceVariable-1440509629257"
+	},
+	"FileServiceGetDownloadFileAsInline": {
+		"name": "FileServiceGetDownloadFileAsInline",
+		"type": "com.wavemaker.runtime.file.model.DownloadResponse",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "FileService",
+		"operation": "getDownloadFileAsInline",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "get",
+			"name": "getDownloadFileAsInline",
+			"relativePath": "/file/downloadFileAsInline",
+			"parameters": [
+				{
+					"name": "file",
+					"parameterType": "query"
+				},
+				{
+					"name": "returnName",
+					"parameterType": "query"
+				}
+			]
+		},
+		"_id": "wm-FileServiceGetDownloadFileAsInline-wm.ServiceVariable-1440509629262"
+	},
+	"FileServiceDeleteFile": {
+		"name": "FileServiceDeleteFile",
+		"type": "boolean",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "FileService",
+		"operation": "deleteFile",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "delete",
+			"name": "deleteFile",
+			"relativePath": "/file/file",
+			"parameters": [
+				{
+					"name": "file",
+					"parameterType": "query"
+				}
+			]
+		},
+		"_id": "wm-FileServiceDeleteFile-wm.ServiceVariable-1440509629263"
+	},
+	"FileServiceListFiles": {
+		"name": "FileServiceListFiles",
+		"type": "com.books.fileservice.FileService.WMFile",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "FileService",
+		"operation": "listFiles",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "post",
+			"name": "listFiles",
+			"relativePath": "/file/files",
+			"parameters": []
+		},
+		"_id": "wm-FileServiceListFiles-wm.ServiceVariable-1440509629264"
+	},
+	"goToPage-Details": {
+		"name": "goToPage-Details",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Details",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage-Details-wm.NavigationVariable-1440597551416"
+	},
+	"SELECTED_BOOK_ID": {
+		"name": "SELECTED_BOOK_ID",
+		"type": "number",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": 0
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "number",
+						"value": ""
+					}
+				],
+				"type": "object",
+				"isList": false
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-SELECTED_BOOK_ID-wm.Variable-1440597773030"
+	},
+	"READ_STATUS_ENUM": {
+		"name": "READ_STATUS_ENUM",
+		"type": "entry",
+		"isList": true,
+		"owner": "App",
+		"dataSet": [
+			{
+				"label": "WISH",
+				"value": 1
+			},
+			{
+				"label": "READING",
+				"value": 2
+			},
+			{
+				"label": "COMPLETED",
+				"value": 3
+			}
+		],
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"fields": [
+					{
+						"name": "name",
+						"type": "entry"
+					},
+					{
+						"name": "dataValue",
+						"type": "entry"
+					}
+				],
+				"type": "object",
+				"isList": true
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-READ_STATUS_ENUM-wm.Variable-1440636299098"
+	},
+	"goToPage-ProfilePage": {
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "ProfilePage",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage-ProfilePage-wm.NavigationVariable-1440767379339"
+	}
+}

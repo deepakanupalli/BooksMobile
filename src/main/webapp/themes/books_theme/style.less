@@ -1,0 +1,584 @@
+/*START - Books App Theme*/
+
+.wm-app {
+  @import url("../../../components/bootstrap/less/bootstrap.less");
+  @import url("variables.less");
+
+  @font-face {
+    font-family: 'Robotoregular';
+    src: url('fonts/Roboto-Regular-webfont.eot');
+    src: url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Roboto-Regular-webfont.woff') format('woff'),
+    url('fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+    url('fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  font-size: @font-size-base;
+  color: @text-color;
+  font-family: 'Robotoregular';
+  background-color: @body-bg;
+
+  /*******override the bootstrap styles since the style properties doesn't exist****/
+  //Variables
+  @app-border-color: #CECECE;
+  @app-header-bg-color: #CA534E;
+
+  button {
+    color: #333;
+  }
+
+  //Liveform
+  .app-liveform.panel {
+    background-color: transparent;
+    color: @text-color;
+    border: 0;
+    .panel-default {
+      border-color: transparent;
+    }
+    .panel-default > .panel-heading {
+      border: 0;
+      background-color: transparent;
+    }
+    .panel-footer {
+      background-color: transparent;
+      border-top-color: transparent;
+    }
+    .form-header.panel-heading {
+      border-color: transparent;
+      background: none;
+      color: @text-color;
+    }
+  }
+
+  //Panels
+  .panel {
+    border-color: @app-header-bg-color;
+    background-color: transparent;
+
+    .panel-heading {
+      color: #fff;
+      border: 1px solid @app-header-bg-color;
+      background-color: @app-header-bg-color;
+
+      .heading {
+        margin: 0;
+      }
+
+      .panel-actions {
+        .app-menu .app-button, .panel-action {
+          color: #C1C2C3;
+          font-size: 1em;
+        }
+      }
+
+      + .panel-collapse > .panel-body {
+        border-top-color: transparent;
+      }
+    }
+    .panel-title {
+      font-weight: normal;
+      font-size: 1em;
+    }
+
+    .panel-collapse {
+      border: 1px solid @app-header-bg-color;
+    }
+  }
+
+  //Tabs
+  .nav-tabs {
+    border-bottom: 1px solid @app-header-bg-color;
+    > li {
+      &.active {
+        > a, > a:hover, > a:focus {
+          color: #fff;
+          background-color: transparent;
+          border: 1px solid @app-header-bg-color;
+        }
+      }
+
+      > a {
+        border: 1px solid @app-header-bg-color;
+        border-bottom: 0;
+        background-color: @app-header-bg-color;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          color: #fff;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  //App Tabs
+  .app-tabs {
+    .tab-content {
+      .tab-body {
+        background-color: transparent;
+        border-color: @app-header-bg-color;
+      }
+    }
+  }
+
+  //Tab Content
+  .tab-content {
+    .tab-body {
+      border-color: @app-border-color;
+      padding: 1.25em 1.6em;
+    }
+  }
+
+  //Dropdown Menu
+  .dropdown-menu {
+    background-color: @app-header-bg-color;
+
+    > li {
+      > a {
+        color: #fff;
+        &:hover, &:focus {
+          color: @app-header-bg-color;
+          background-color: #fff;
+        }
+      }
+    }
+
+    .btn-link {
+      color: #fff;
+    }
+  }
+
+
+  //Calendar and Date Widgets common styles
+  .app-calendar, .app-date, .app-datetime {
+    .dropdown-menu {
+      .btn-default {
+        border-radius: 0;
+        border-color: transparent;
+
+        &.active {
+          color: #ffffff;
+          background-color: #2A334E;
+          border-color: #2A334E;
+
+          &:hover {
+            color: #ffffff;
+            background-color: #2A334E;
+            border-color: #2A334E;
+          }
+
+          .text-info {
+            color: #FFFFFF;
+          }
+        }
+
+        &.pull-left, &.pull-right {
+          width: 100%;
+        }
+      }
+    }
+
+    .well {
+      background-image: none;
+      background-color: #424F63;
+      color: #ffffff;
+      padding: 0.4em;
+    }
+  }
+
+
+  //Date Widget
+  .date-wrapper {
+    .dropdown-menu {
+      .btn-default {
+        border-radius: 0;
+        border-color: transparent;
+
+        &.active {
+          background-color: #bcd4af;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .input-group-btn {
+      .btn-default {
+        color: #ffffff;
+        background-color: #FFB300;
+      }
+    }
+  }
+
+  //Label
+  label {
+    font-weight: normal;
+    color: #ccc;
+  }
+
+  //Tile
+  .app-tile.panel {
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+
+    .panel-body {
+      border-width: 0.33em 0 0;
+    }
+  }
+
+  .list-group-item-separator {
+    margin-bottom: 0.25em;
+    border-radius: 0.25em;
+    .form-group {
+      padding: 0 1em;
+    }
+  }
+
+  //Table
+  .table {
+    > thead {
+      > tr {
+        > th {
+          background-color: @brand-primary;
+          color: #FFFFFF;
+
+          .sort-buttons-container .sort-button .sort-icon {
+            border-color: #FFF rgba(0, 0, 0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  /*Modal*/
+  .modal-header {
+    color: #fff;
+    font-weight: bold;
+    background-color: @app-header-bg-color;
+  }
+
+  .breadcrumb {
+    background-color: #F2EFEF;
+  }
+
+  .app-switch {
+    .btn-default {
+      background-color: #2A334E;
+      border-color: #2A334E;
+      color: #ffffff;
+    }
+  }
+
+  /*Rating Widget*/
+  .app-ratings {
+    .rating-style > label {
+      color: #FFB300;
+
+      &:hover, &:hover ~ label {
+        color: #006;
+      }
+
+      &.active {
+        color: #006;
+      }
+    }
+  }
+
+  .app-segmented-control {
+     > .btn-group.btn-group-justified {
+       padding: 0;
+     }
+
+    .btn-group {
+      .btn-default {
+        color: #fff;
+        background-color: #273647;
+        border-color: transparent;
+        border-radius: 0;
+        padding-top: 1.5em;
+        padding-bottom: .75em;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
+
+        &.active {
+          border-bottom-color: #FF6866;
+        }
+      }
+    }
+  }
+
+  .form-control {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    border-bottom-color: #222F3E;
+    border-bottom-width: 2px;
+    color: #fff;
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: @app-header-bg-color;
+    &:hover {
+      background-color: darken(@app-header-bg-color, 10%);
+    }
+  }
+
+  /*Rating Widget*/
+  .app-ratings {
+    .rating-style > label {
+      color: @app-header-bg-color;
+
+      &:hover, &:hover ~ label {
+        color: @app-header-bg-color;
+      }
+
+      &.active {
+        color: @app-header-bg-color;
+      }
+    }
+  }
+
+  /*Layout**************************************************************************/
+  .app-content-column {
+    padding: 0;
+  }
+
+  //Mobile Specific button
+  .navbar-toggle {
+    margin-right: 1.2em;
+    color: #ffffff;
+  }
+
+  //Header
+  .app-header {
+    color: #fff;
+    background-color: @app-header-bg-color;
+
+    .nav {
+      > li {
+        > a {
+          &:hover {
+            color: #FFFFFF;
+            background-color: darken(@app-header-bg-color, 15%);
+          }
+        }
+      }
+    }
+  }
+
+  //Mobile Navbar
+  .app-mobile-navbar  {
+    .navbar  {
+      .navbar-nav  {
+        > li {
+          > * {
+            color: #ffffff;
+            height: 44pt;
+          }
+        }
+      }
+    }
+  }
+
+  //Nav Open state
+  .nav {
+    .open {
+      > a, > a:hover, > a:focus {
+        background-color: darken(@app-header-bg-color, 10%);
+        border: 0;
+      }
+    }
+  }
+
+  .list-group-item {
+    background-color: transparent;
+    border: 0;
+  }
+
+  //Top Nav Bar
+  .app-navbar.navbar-default {
+    margin-bottom: 0;
+    border-radius: 0;
+    border-color: transparent;
+    background-color: lighten(#2A334E, 10%);
+
+    .navbar-nav {
+      > li {
+        a {
+          color: @navbar-default-link-color;
+          padding: 1.5em;
+
+          &:hover, &:focus, &.active {
+            color: @navbar-default-link-hover-color;
+            text-decoration: none;
+            background-color: #fff;
+          }
+        }
+
+        > .dropdown .dropdown-menu {
+          margin: 0;
+        }
+      }
+
+      .app-nav-item > .app-popover > a.app-popover-link {
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+      }
+    }
+
+    .app-nav-item {
+      > .dropdown, > .app-popover {
+        a.dropdown-toggle, a.app-popover-link {
+          padding-top: 1.6em;
+          padding-bottom: 1.6em;
+        }
+      }
+
+      > .dropdown .dropdown-menu {
+        background-color: @app-header-bg-color;
+      }
+    }
+
+    .popover {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #FFFFFF), color-stop(1, #E9E9E9));
+      background: -webkit-linear-gradient(top, #FFFFFF 5%, #E9E9E9 100%);
+      background: -moz-linear-gradient(top, #FFFFFF 5%, #E9E9E9 100%);
+      background: -o-linear-gradient(top, #FFFFFF 5%, #E9E9E9 100%);
+      background: -ms-linear-gradient(top, #FFFFFF 5%, #E9E9E9 100%);
+      background: linear-gradient(to bottom, #FFFFFF 5%, #E9E9E9 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FFFFFF, endColorstr=#E9E9E9);
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorStr='#FFFFFF', EndColorStr='#E9E9E9')";
+      min-width: 200px;
+
+    &.bottom {
+      > .arrow {
+      border-bottom-color: rgba(0, 0, 0, 0.14);
+
+        &:after {
+          border-bottom-color: rgba(232, 234, 236, 0.6);
+        }
+      }
+    }
+
+      .popover-content {
+        padding: 0;
+      }
+    }
+
+    //Mobile Specific button
+    .navbar-toggle {
+      margin-right: 1.2em;
+      color: #ffffff;
+
+      &:hover, &:focus {
+        color: #006;
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  //Bottom Nav Bar
+  .app-tabbar.bottom {
+    .navbar-default {
+      background-color: @app-header-bg-color;
+      border: 0;
+      .navbar-nav {
+        > li {
+          > a {
+            color: #fff;
+            &:hover {
+              color: @app-header-bg-color;
+              background-color: lighten(@app-header-bg-color, 15%)
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .app-left-panel, .app-right-panel {
+    background-color: #2A334E;
+
+    .nav {
+      li, .app-nav-item {
+        margin-top: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+        > a, > .btn, > .dropdown > a.dropdown-toggle {
+          color: #fff;
+          padding: 1em;
+          position: relative;
+          border-radius: 0;
+          border-left: 0.33em solid transparent;
+
+          &:hover {
+            text-decoration: none;
+            color: @app-header-bg-color;
+            background-color: #fff;
+          }
+
+           &.active {
+            color: #FFF;
+            background-color: @app-header-bg-color;
+          }
+
+          .glyphicon {
+            margin-right: 1em;
+          }
+        }
+      }
+
+      > .dropdown.open {
+        > a.dropdown-toggle {
+          color: #fff;
+          background-color: inherit;
+        }
+
+        .dropdown-menu {
+          background-color: @app-header-bg-color;
+
+          > li {
+            > a {
+              padding: 0.8em 1.2em;
+              &:hover, &:focus, &.active {
+                color: @app-header-bg-color;
+                background-color: #fff;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .app-top-nav {
+    background-color: #E9E9E9;
+  }
+
+
+  //Footer
+  .app-footer {
+    padding: 1em 1.5em;
+    background: none;
+    background-color: @app-header-bg-color;
+
+
+    .nav {
+      > li {
+        > a {
+          &:hover {
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}

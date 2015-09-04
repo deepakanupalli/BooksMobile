@@ -1,0 +1,13 @@
+{
+	"methods": [{
+		"operationType": null,
+		"name": "invoke",
+		"parameters": [{
+			"name": "q",
+			"type": "java.lang.String"
+		}],
+		"returnType": "isbnLookup.RootResponse"
+	}],
+	"serviceURL": "isbnLookup.json",
+	"serviceType": "JSON-RPC"
+}

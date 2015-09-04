@@ -1,0 +1,118 @@
+<style id="BookList.css">
+
+</style>
+<script id="BookList.js">
+Application.$controller("BookListPageController", ["$scope", function($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function() {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function() {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+
+
+    $scope.bookListClick = function($event, $isolateScope) {
+        $scope.Variables.SELECTED_BOOK_ID.dataSet.dataValue = $isolateScope.item.id;
+    };
+
+}]);
+</script>
+<script id="BookList.variables.json">
+var _BookListPage_Variables_ ={
+	"bookList": {
+		"name": "bookList",
+		"type": "com.books.library.Book",
+		"isList": true,
+		"owner": "Page",
+		"dataSet": [
+			{
+				"id": "",
+				"readStatus": "",
+				"author": "",
+				"title": "",
+				"imageUrl": "",
+				"description": "",
+				"isbn": "",
+				"publisher": ""
+			}
+		],
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"fields": [
+					{
+						"name": "id",
+						"type": "java.lang.Integer",
+						"isList": false
+					},
+					{
+						"name": "readStatus",
+						"type": "java.lang.Integer",
+						"isList": false
+					},
+					{
+						"name": "author",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "title",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "imageUrl",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "description",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "isbn",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "publisher",
+						"type": "java.lang.String",
+						"isList": false
+					}
+				],
+				"type": "com.books.library.Book",
+				"isList": false
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-bookList-wm.Variable-1440153535625"
+	}
+}
+</script>
+<script id="BookList.html" type="text/ng-template">
+<wm-partial data-ng-controller="BookListPageController" name="partial1">
+    <wm-livelist listclass="list-group" itemclass="list-group-item" name="bookList" itemsperrow="3" dataset="bind:Variables.bookList.dataSet" on-click="bookListClick($event, $scope);goToPage-Details">
+        <wm-listtemplate layout="blank" name="listtemplate2">
+            <wm-container class="blank" data-template-ctr="true" name="container2" horizontalalign="center">
+                <wm-container name="container2_1" display="inline-block" paddingtop="5" paddingbottom="5" paddingright="5" paddingleft="5" backgroundcolor="rgba(0,0,0,0.3);">
+                    <wm-picture name="bookPic" picturesource="bind:Variables.bookList.dataSet[$i].imageUrl" on-click="bookPicClick($event, $scope);goToPage-Details" height="120px" class="bookImage"></wm-picture>
+                </wm-container>
+            </wm-container>
+        </wm-listtemplate>
+    </wm-livelist>
+</wm-partial>
+</script>

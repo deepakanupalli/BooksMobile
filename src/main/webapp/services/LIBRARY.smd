@@ -1,0 +1,16 @@
+{
+	"methods": [{
+		"operationType": "nativequery",
+		"name": "updateBookStatus",
+		"parameters": [{
+			"name": "readStatus",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "LIBRARYupdateBookStatusrtnType"
+	}],
+	"serviceURL": "LIBRARY.json",
+	"serviceType": "JSON-RPC"
+}

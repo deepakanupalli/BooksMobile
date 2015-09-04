@@ -1,0 +1,57 @@
+{
+	"methods": [{
+		"operationType": null,
+		"name": "deleteFile",
+		"parameters": [{
+			"name": "file",
+			"type": "java.lang.String"
+		}],
+		"returnType": "boolean"
+	}, {
+		"operationType": null,
+		"name": "getDownloadFile",
+		"parameters": [{
+			"name": "file",
+			"type": "java.lang.String"
+		}, {
+			"name": "returnName",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.file.model.DownloadResponse"
+	}, {
+		"operationType": null,
+		"name": "getDownloadFileAsInline",
+		"parameters": [{
+			"name": "file",
+			"type": "java.lang.String"
+		}, {
+			"name": "returnName",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.file.model.DownloadResponse"
+	}, {
+		"operationType": null,
+		"name": "listFiles",
+		"parameters": [{
+			"name": "httpServletRequest",
+			"type": "javax.servlet.http.HttpServletRequest"
+		}],
+		"returnType": "[com.books.fileservice.FileService.WMFile]"
+	}, {
+		"operationType": null,
+		"name": "uploadFile",
+		"parameters": [{
+			"name": "files",
+			"type": "[org.springframework.web.multipart.MultipartFile]"
+		}, {
+			"name": "relativePath",
+			"type": "java.lang.String"
+		}, {
+			"name": "httpServletRequest",
+			"type": "javax.servlet.http.HttpServletRequest"
+		}],
+		"returnType": "[com.books.fileservice.FileService.FileUploadResponse]"
+	}],
+	"serviceURL": "FileService.json",
+	"serviceType": "JSON-RPC"
+}

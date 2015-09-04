@@ -1,0 +1,93 @@
+<style id="ProfilePage.css">
+
+
+</style>
+<script id="ProfilePage.js">
+Application.$controller("ProfilePagePageController", ["$scope", function ($scope) {
+    "use strict";
+}]);
+
+
+</script>
+<script id="ProfilePage.variables.json">
+var _ProfilePagePage_Variables_ ={}
+</script>
+<script id="ProfilePage.html" type="text/ng-template">
+<wm-page data-ng-controller="ProfilePagePageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1" horizontalalign="center" paddingunit="em" paddingbottom="0.5">
+                <wm-picture name="userPicture" picturesource="https://s3.amazonaws.com/uifaces/faces/twitter/mko/128.jpg" shape="circle" margintop="2" paddingunit="px" marginunit="em" bordercolor="#d8dcdc" borderstyle="solid" bordertop="0.25" borderunit="em"
+                borderleft="0.25" borderright="0.25" borderbottom="0.25" width="7.5em"></wm-picture>
+                <wm-label name="userFullName" width="100%" caption="Michael Owens" class="h4" marginbottom="4"></wm-label>
+                <wm-label width="100%" name="userLocation" caption="Bay Area, San Francisco" marginbottom="2" marginunit="em" class="h6" margintop="0.25"></wm-label>
+                <wm-buttongroup name="buttongroup1">
+                    <wm-button caption="" name="followUserFacebookBtn" iconclass="fa fa-facebook" fontsize="1.5" fontunit="em" paddingleft="1.2" paddingright="1.2" paddingunit="em"></wm-button>
+                    <wm-button caption="" name="followUserTwitterBtn" iconclass="fa fa-twitter" fontsize="1.5" fontunit="em" paddingleft="1.2" paddingright="1.2" paddingunit="em"></wm-button>
+                    <wm-button caption="" name="followUserGPlusBtn" iconclass="fa fa-google-plus" fontsize="1.5" fontunit="em" paddingleft="1.2" paddingright="1.2" paddingunit="em"></wm-button>
+                </wm-buttongroup>
+            </wm-container>
+            <wm-container name="followUserBtnContainer" paddingleft=".5" paddingright=".5" paddingunit="em" paddingtop="1" paddingbottom="1">
+                <wm-button caption="Follow" name="followUserBtn" marginunit="em" width="100%" color="#ffffff" paddingunit="em" class="btn-primary btn-lg"></wm-button>
+            </wm-container>
+            <wm-panel class="panel-default" collapsible="false" showheader="true" name="aboutPanel" title="About Me" borderstyle="none" marginleft=".5" marginright=".5" marginunit="em">
+                <wm-livelist listclass="list-group" template="true" dataset="1" name="aboutcontent">
+                    <wm-listtemplate layout="blank" name="listtemplate1">
+                        <wm-container class="blank" data-template-ctr="true" name="container5" margintop="0" marginbottom="1" marginunit="em">
+                            <wm-label caption="Co-founder of @AcmeCompany. You can see existing investments and exits on angellist. Recent exits include @bot to KCompany, @AnotherIdea to Google" width="100%" margintop="2" marginbottom="0" name="aboutcontenttext"
+                            color="#798082"></wm-label>
+                        </wm-container>
+                    </wm-listtemplate>
+                </wm-livelist>
+            </wm-panel>
+            <wm-panel class="panel-default" collapsible="false" showheader="true" title="Contact" name="contactPanel" borderstyle="none" marginleft=".5" marginright=".5" marginunit="em">
+                <wm-livelist listclass="list-group" template="true" dataset="1" name="contactList">
+                    <wm-listtemplate layout="blank" name="listtemplate1">
+                        <wm-container class="blank" data-template-ctr="true" name="container5" margintop="0" marginbottom="1" marginunit="em">
+                            <wm-label caption="johndoe@johndoe.com" width="100%" margintop="2" marginbottom="0" name="experienceDuration" color="#798082"></wm-label>
+                            <wm-label caption="971-001-0022" width="100%" paddingunit="em" marginunit="em" name="companyName" color="#798082" margintop="0.25"></wm-label>
+                            <wm-label caption="422001111" width="100%" paddingunit="em" marginunit="em" name="companyName" color="#798082" margintop="0.25"></wm-label>
+                            <wm-label caption="www.johndoe.com" width="100%" paddingunit="em" marginunit="em" name="companyName" color="#798082" margintop="0.25"></wm-label>
+                        </wm-container>
+                    </wm-listtemplate>
+                </wm-livelist>
+            </wm-panel>
+            <wm-panel class="panel-default" collapsible="false" showheader="true" name="usersPostsPanel" title="My Posts" fontfamily="arial" paddingleft=".5" paddingright=".5" paddingunit="em" paddingtop="1" paddingbottom="1" borderstyle="none" marginleft=".5"
+            marginright=".5" marginunit="em">
+                <wm-livelist listclass="list-group" template="true" name="usersPosts" dataset="1, 2, 3">
+                    <wm-listtemplate layout="gridlayout" name="listtemplate1">
+                        <wm-layoutgrid class="gridlayout" name="layoutgrid1" borderstyle="solid" borderbottom="1" borderleft="0" bordertop="0" borderright="0" margintop=".5" marginbottom=".5" marginunit="em" paddingtop="1" paddingbottom="2" paddingunit="em"
+                        bordercolor="#ccc">
+                            <wm-gridrow name="gridrow1">
+                                <wm-gridcolumn columnwidth="1" data-template-ctr="true" name="gridcolumn1" horizontalalign="center" class="col-xs-3">
+                                    <wm-picture class="picture" shape="circle" width="50" name="postedByPicture" picturesource="https://s3.amazonaws.com/uifaces/faces/twitter/mko/48.jpg"></wm-picture>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="11" data-template-ctr="true" name="gridcolumn2" class="col-xs-9" paddingtop="0.5" paddingleft="0.5" paddingunit="em" paddingright="0.5" paddingbottom="0.5">
+                                    <wm-label name="userAction" caption="John posted a photo" width="100%" marginbottom="0" margintop="0" color="#798082"></wm-label>
+                                    <wm-label name="timePosted" caption="45 min ago" width="100%" color="#c1c1c1" class="h6" margintop="2"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow2">
+                                <wm-gridcolumn columnwidth="3" name="gridcolumn6_1" class="col-xs-3"></wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="9" name="gridcolumn3" paddingtop="0" paddingbottom="1" paddingunit="em" class="col-xs-9" paddingleft=".5" paddingright=".5">
+                                    <wm-label caption="Hi Tim, do you want to go to the conference in June?" width="100%" margintop="0" marginbottom="0" name="experienceDuration" color="#798082"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow3">
+                                <wm-gridcolumn columnwidth="1" name="gridcolumn5" class="col-xs-3"></wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="11" name="gridcolumn6">
+                                    <wm-buttongroup name="buttongroup2">
+                                        <wm-button caption="" name="likePostBtn" iconclass="fa fa-heart" fontsize="1.5" fontunit="em" borderstyle="none" color="#5e5a5a"></wm-button>
+                                        <wm-button caption="" name="sharePostBtn" iconclass="fa fa-wechat" fontsize="1.5" fontunit="em" borderstyle="none" color="#5e5a5a"></wm-button>
+                                    </wm-buttongroup>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-listtemplate>
+                </wm-livelist>
+            </wm-panel>
+        </wm-page-content>
+    </wm-content>
+</wm-page>
+</script>

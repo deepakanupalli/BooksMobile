@@ -1,0 +1,8 @@
+ 
+.wm-app .app-mobile-navbar .navbar {
+    overflow: hidden;
+    padding: 0 10px;
+}
+.bookImage {
+    border-radius: 5px;
+}

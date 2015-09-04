@@ -1,0 +1,72 @@
+{
+	"bookList": {
+		"name": "bookList",
+		"type": "com.books.library.Book",
+		"isList": true,
+		"owner": "Page",
+		"dataSet": [
+			{
+				"id": "",
+				"readStatus": "",
+				"author": "",
+				"title": "",
+				"imageUrl": "",
+				"description": "",
+				"isbn": "",
+				"publisher": ""
+			}
+		],
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"fields": [
+					{
+						"name": "id",
+						"type": "java.lang.Integer",
+						"isList": false
+					},
+					{
+						"name": "readStatus",
+						"type": "java.lang.Integer",
+						"isList": false
+					},
+					{
+						"name": "author",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "title",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "imageUrl",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "description",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "isbn",
+						"type": "java.lang.String",
+						"isList": false
+					},
+					{
+						"name": "publisher",
+						"type": "java.lang.String",
+						"isList": false
+					}
+				],
+				"type": "com.books.library.Book",
+				"isList": false
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-bookList-wm.Variable-1440153535625"
+	}
+}

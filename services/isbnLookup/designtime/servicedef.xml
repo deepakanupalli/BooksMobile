@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="isbnLookup" CRUDService="false" type="RestService" springFile="isbnLookup.spring.xml">
+    <operation name="invoke">
+        <parameter name="q" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="isbnLookup.RootResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="isbnLookup.accessInfo" name="accessInfo" supportsQuickData="false">
+            <element name="webReaderLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="textToSpeechPermission" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="publicDomain" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="viewability" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accessViewStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pdf" typeRef="isbnLookup.pdf" isList="false" allowNull="false"/>
+            <element name="epub" typeRef="isbnLookup.epub" isList="false" allowNull="false"/>
+            <element name="embeddable" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="quoteSharingAllowed" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.itemsEntryItem" name="itemsEntryItem" supportsQuickData="false">
+            <element name="saleInfo" typeRef="isbnLookup.saleInfo" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="searchInfo" typeRef="isbnLookup.searchInfo" isList="false" allowNull="false"/>
+            <element name="etag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="volumeInfo" typeRef="isbnLookup.volumeInfo" isList="false" allowNull="false"/>
+            <element name="selfLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accessInfo" typeRef="isbnLookup.accessInfo" isList="false" allowNull="false"/>
+            <element name="kind" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.industryIdentifiersEntryItem" name="industryIdentifiersEntryItem" supportsQuickData="false">
+            <element name="type" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="identifier" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.epub" name="epub" supportsQuickData="false">
+            <element name="acsTokenLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isAvailable" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.RootResponse" name="RootResponse" supportsQuickData="false">
+            <element name="items" typeRef="isbnLookup.itemsEntryItem" isList="true" allowNull="false"/>
+            <element name="totalItems" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="kind" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.pdf" name="pdf" supportsQuickData="false">
+            <element name="acsTokenLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isAvailable" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.volumeInfo" name="volumeInfo" supportsQuickData="false">
+            <element name="pageCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="averageRating" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="readingModes" typeRef="isbnLookup.readingModes" isList="false" allowNull="false"/>
+            <element name="infoLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="printType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="allowAnonLogging" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="publisher" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="authors" typeRef="java.lang.String" isList="true" allowNull="false"/>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="canonicalVolumeLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="previewLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ratingsCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="imageLinks" typeRef="isbnLookup.imageLinks" isList="false" allowNull="false"/>
+            <element name="subtitle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="contentVersion" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="categories" typeRef="java.lang.String" isList="true" allowNull="false"/>
+            <element name="language" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="publishedDate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="industryIdentifiers" typeRef="isbnLookup.industryIdentifiersEntryItem" isList="true" allowNull="false"/>
+            <element name="maturityRating" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.saleInfo" name="saleInfo" supportsQuickData="false">
+            <element name="retailPrice" typeRef="isbnLookup.retailPrice" isList="false" allowNull="false"/>
+            <element name="saleability" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="listPrice" typeRef="isbnLookup.listPrice" isList="false" allowNull="false"/>
+            <element name="offers" typeRef="isbnLookup.offersEntryItem" isList="true" allowNull="false"/>
+            <element name="buyLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isEbook" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.imageLinks" name="imageLinks" supportsQuickData="false">
+            <element name="thumbnail" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="smallThumbnail" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.listPrice" name="listPrice" supportsQuickData="false">
+            <element name="amount" typeRef="java.lang.Double" isList="false" allowNull="false"/>
+            <element name="amountInMicros" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="currencyCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.searchInfo" name="searchInfo" supportsQuickData="false">
+            <element name="textSnippet" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.offersEntryItem" name="offersEntryItem" supportsQuickData="false">
+            <element name="retailPrice" typeRef="isbnLookup.retailPrice" isList="false" allowNull="false"/>
+            <element name="listPrice" typeRef="isbnLookup.listPrice" isList="false" allowNull="false"/>
+            <element name="finskyOfferType" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.retailPrice" name="retailPrice" supportsQuickData="false">
+            <element name="amount" typeRef="java.lang.Double" isList="false" allowNull="false"/>
+            <element name="amountInMicros" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="currencyCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="isbnLookup.readingModes" name="readingModes" supportsQuickData="false">
+            <element name="text" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="image" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

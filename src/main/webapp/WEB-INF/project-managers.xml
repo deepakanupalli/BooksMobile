@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean class="com.wavemaker.runtime.service.TypeManager" parent="typeManagerBase" scope="singleton" id="typeManager">
+        <property name="types">
+            <map merge="true">
+                <entry key="FileService">
+                    <list>
+                        <value>com.wavemaker.runtime.file.model.DownloadResponse</value>
+                        <value>com.books.fileservice.FileService.WMFile</value>
+                        <value>javax.servlet.http.HttpServletRequest</value>
+                        <value>com.books.fileservice.FileService.FileUploadResponse</value>
+                        <value>org.springframework.web.multipart.MultipartFile</value>
+                    </list>
+                </entry>
+                <entry key="LIBRARY">
+                    <list>
+                        <value>com.books.library.Book</value>
+                        <value>LIBRARYupdateBookStatusrtnType</value>
+                    </list>
+                </entry>
+                <entry key="isbnLookup">
+                    <list>
+                        <value>isbnLookup.accessInfo</value>
+                        <value>isbnLookup.itemsEntryItem</value>
+                        <value>isbnLookup.industryIdentifiersEntryItem</value>
+                        <value>isbnLookup.epub</value>
+                        <value>isbnLookup.RootResponse</value>
+                        <value>isbnLookup.pdf</value>
+                        <value>isbnLookup.volumeInfo</value>
+                        <value>isbnLookup.saleInfo</value>
+                        <value>isbnLookup.imageLinks</value>
+                        <value>isbnLookup.listPrice</value>
+                        <value>isbnLookup.searchInfo</value>
+                        <value>isbnLookup.offersEntryItem</value>
+                        <value>isbnLookup.retailPrice</value>
+                        <value>isbnLookup.readingModes</value>
+                    </list>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

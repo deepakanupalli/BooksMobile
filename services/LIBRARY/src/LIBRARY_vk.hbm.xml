@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.books.library">
+    <class entity-name="com.books.library.Book" table="BOOK" name="com.books.library.Book">
+        <id name="id" type="integer">
+            <column name="ID" length="255" not-null="true" precision="19"/>
+            <generator class="identity"/>
+        </id>
+        <property name="title" type="string">
+            <column name="TITLE" length="255" not-null="true" precision="19"/>
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="publisher" type="string">
+            <column name="PUBLISHER" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="imageUrl" type="string">
+            <column name="IMAGE_URL" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="readStatus" type="integer">
+            <column name="READ_STATUS" length="1" not-null="false" precision="19" default="'-1'"/>
+        </property>
+        <property name="description" type="text">
+            <column name="DESCRIPTION" length="255" not-null="false" precision="19"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LIBRARY" CRUDService="true" type="DataService" springFile="LIBRARY.spring.xml">
+    <operation operationType="nativequery" name="updateBookStatus">
+        <parameter name="readStatus" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="LIBRARYupdateBookStatusrtnType" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.books.library.Book">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="author" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="publisher" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isbn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="imageUrl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="readStatus" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="LIBRARYupdateBookStatusrtnType"/>
+    </dataobjects>
+</service>

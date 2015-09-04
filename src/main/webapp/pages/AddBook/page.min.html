@@ -1,0 +1,495 @@
+<style id="AddBook.css">
+
+</style>
+<script id="AddBook.js">
+Application.$controller("AddBookPageController", ["$scope", function($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function() {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function() {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+    $scope.getISBNdataonSuccess = function(variable, data) {
+        var volume = '';
+        if (!data || data.totalItems == 0) {
+            alert('Information is not available for this book.');
+        } else {
+            var imageLinks = data.items[0].volumeInfo.imageLinks;
+            if (imageLinks) {
+                $scope.Variables.BookImage.dataSet.dataValue = (imageLinks.thumbnail ? imageLinks.thumbnail : imageLinks.smallThumbnail);
+            };
+        }
+    };
+
+
+    $scope.uploadImageonSuccess = function(variable, data) {
+        $scope.Variables.BookImage.dataSet.dataValue = data.path;
+    };
+
+
+    $scope.addBookFormBeforeservicecall = function($event, $operation, $data) {
+        $data.imageUrl = $scope.Variables.BookImage.dataSet.dataValue;
+    };
+
+}]);
+
+
+Application.$controller("addBookFormController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+</script>
+<script id="AddBook.variables.json">
+var _AddBookPage_Variables_ ={
+	"getISBNdata": {
+		"name": "getISBNdata",
+		"type": "isbnLookup.RootResponse",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "q",
+						"type": "string",
+						"value": "bind:\"isbn:\"+Widgets.barcodescanner.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "isbnLookup",
+		"operation": "invoke",
+		"operationType": "get",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "Javascript",
+		"serviceType": "RestService",
+		"wmServiceOperationInfo": {
+			"methodType": "get",
+			"name": "invoke",
+			"relativePath": "/isbnLookup/invoke/",
+			"consumes": [
+				"text/xml"
+			],
+			"parameters": [
+				{
+					"name": "q",
+					"parameterType": "query"
+				}
+			]
+		},
+		"category": "wm.ServiceVariable",
+		"_id": "wm-getISBNdata-wm.ServiceVariable-1440208653898"
+	},
+	"scanISBNData": {
+		"name": "scanISBNData",
+		"owner": "Page",
+		"dataSet": {
+			"data": {
+				"text": "BAR CODE",
+				"format": "TEXT",
+				"cancelled": false
+			}
+		},
+		"dataBinding": {},
+		"service": "scan",
+		"operation": "scanBarCode",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"onSuccess": "getISBNdata",
+		"vibrationtime": 2,
+		"category": "wm.MobileVariable",
+		"_id": "wm-scanISBNData-wm.MobileVariable-1440209455530"
+	},
+	"uploadImage": {
+		"name": "uploadImage",
+		"owner": "Page",
+		"dataSet": {
+			"name": "",
+			"path": "",
+			"size": 0,
+			"type": ""
+		},
+		"dataBinding": {
+			"remoteFolder": "/",
+			"localFile": "bind:Variables.takeBookPicture.dataSet.data"
+		},
+		"service": "file",
+		"operation": "upload",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"onSuccess": "Javascript",
+		"vibrationtime": 2,
+		"category": "wm.MobileVariable",
+		"_id": "wm-uploadImage-wm.MobileVariable-1440487072029"
+	},
+	"takeBookPicture": {
+		"name": "takeBookPicture",
+		"owner": "Page",
+		"dataSet": {
+			"data": "resources/images/imagelists/default-image.png"
+		},
+		"dataBinding": {},
+		"service": "device",
+		"operation": "capturePicture",
+		"startUpdate": false,
+		"imageQuality": 82,
+		"imageEncodingType": "1",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"onSuccess": "uploadImage",
+		"vibrationtime": 2,
+		"category": "wm.MobileVariable",
+		"_id": "wm-takeBookPicture-wm.MobileVariable-1440489898866"
+	},
+	"BookImage": {
+		"name": "BookImage",
+		"type": "string",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string",
+						"value": "resources/images/imagelists/Book-Cover.png"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-BookImage-wm.Variable-1440494773444"
+	},
+	"goToManualSegment": {
+		"name": "goToManualSegment",
+		"owner": "Page",
+		"operation": "gotoSegment",
+		"pageName": "AddBook",
+		"segmentName": "manualSegment",
+		"dataBinding": {
+			"pageName": "",
+			"segmentName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToManualSegment-wm.NavigationVariable-1440597249027"
+	},
+	"saveBook": {
+		"name": "saveBook",
+		"type": "Book",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "BOOK",
+				"fields": [
+					{
+						"name": "id",
+						"type": "number"
+					},
+					{
+						"name": "title",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.title"
+					},
+					{
+						"name": "author",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.author"
+					},
+					{
+						"name": "publisher",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.publisher"
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.description"
+					},
+					{
+						"name": "isbn",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.isbn"
+					},
+					{
+						"name": "imageUrl",
+						"type": "string",
+						"value": "bind:Variables.BookImage.dataSet.dataValue"
+					},
+					{
+						"name": "readStatus",
+						"type": "number",
+						"value": "bind:Widgets.addBookForm.dataoutput.readStatus"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "insert",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "goToPage-BookList",
+		"liveSource": "LIBRARY",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"filterFields": {},
+		"inputFields": {},
+		"category": "wm.LiveVariable",
+		"_id": "wm-saveBook-wm.LiveVariable-1440634987411",
+		"package": "com.books.library.Book",
+		"tableName": "BOOK",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "id",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "ID",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "identity",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "title",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "TITLE",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "author",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "AUTHOR",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "publisher",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "PUBLISHER",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "isbn",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "ISBN",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "imageUrl",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "IMAGE_URL",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "readStatus",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "READ_STATUS",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "-1"
+				},
+				{
+					"fieldName": "description",
+					"type": "text",
+					"hibernateType": "string",
+					"fullyQualifiedType": "text",
+					"columnName": "DESCRIPTION",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": "null",
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"id"
+			],
+			"entityName": "Book",
+			"fullyQualifiedName": "com.books.library.Book",
+			"tableType": "TABLE"
+		}
+	}
+}
+</script>
+<script id="AddBook.html" type="text/ng-template">
+<wm-page data-ng-controller="AddBookPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1" title="ADD BOOK" backbuttoniconclass="glyphicon glyphicon-menu-left">
+        <wm-button class="btn-default" caption="" type="button" name="button2" iconclass="fa fa-check" on-click="saveBook" show="false"></wm-button>
+    </wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-segmented-control name="addBookSegmentedControl" show="true">
+                <wm-segment-content caption="SCAN" name="scanSegment">
+                    <wm-container name="container2" horizontalalign="center" paddingtop="40">
+                        <wm-barcodescanner name="barcodescanner" on-success="getISBNdata;goToManualSegment" iconclass="fa fa-barcode" title="Scan Barcode" caption="Scan Book Barcode" class="btn-lg btn-primary" iconsize="3em"></wm-barcodescanner>
+                    </wm-container>
+                </wm-segment-content>
+                <wm-segment-content caption="MANUAL" name="manualSegment">
+                    <wm-container name="container1" horizontalalign="center" backgroundimage="bind:Variables.BookImage.dataSet.dataValue" backgroundrepeat="no-repeat" backgroundposition="center center" backgroundsize="auto 100%" height="120px" on-click="takeBookPicture"
+                    margintop="20" marginbottom="20"></wm-container>
+                    <wm-liveform name="addBookForm" dataset="bind:Variables.LIBRARYBookData.dataSet" defaultmode="Edit" insertmessage="Book added successfully" novalidate="true" on-success="goToPage-Main" on-beforeservicecall="addBookFormBeforeservicecall($event, $operation, $data)"
+                    show="true" captionposition="top">
+                        <wm-layoutgrid name="layoutgrid1">
+                            <wm-gridrow show="hide" name="gridrow1">
+                                <wm-gridcolumn name="show" columnwidth="12">
+                                    <wm-form-field display-name="Image Url" show="false" primary-key="false" generator="null" key="imageUrl" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter value" multiple="false"
+                                    regexp=".*" default-value="bind:Variables.BookImage.dataSet.dataValue"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow show="show" name="gridrow2">
+                                <wm-gridcolumn name="show" columnwidth="12">
+                                    <wm-form-field display-name="Title" show="true" primary-key="false" generator="null" key="title" type="string" maxvalue="255" is-related="false" readonly="false" required="true" placeholder="Enter Title" class="col-xs-12"
+                                    multiple="false" regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.title"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow show="show" name="gridrow3">
+                                <wm-gridcolumn name="show" columnwidth="12">
+                                    <wm-form-field display-name="Author" show="true" primary-key="false" generator="null" key="author" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter Author" multiple="false"
+                                    regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.authors.join(',')"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow show="show" name="gridrow4">
+                                <wm-gridcolumn name="show" columnwidth="12">
+                                    <wm-form-field display-name="Publisher" show="true" primary-key="false" generator="null" key="publisher" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter Publisher" multiple="false"
+                                    regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.publisher"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow show="show" name="gridrow5">
+                                <wm-gridcolumn name="show" columnwidth="12">
+                                    <wm-form-field display-name="ISBN" show="true" primary-key="false" generator="null" key="isbn" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter ISBN" multiple="false"
+                                    regexp=".*" default-value="bind:Widgets.barcodescanner.datavalue"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow show="show" name="gridrow6">
+                                <wm-gridcolumn name="show" columnwidth="12">
+                                    <wm-form-field display-name="Description" show="true" primary-key="false" generator="null" key="description" type="string" maxvalue="255" is-related="false" readonly="false" required="false" widget-type="Textarea" placeholder="Add Description"
+                                    multiple="false" regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.description" height="auto"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow show="hide" name="gridrow7">
+                                <wm-gridcolumn name="show" columnwidth="12">
+                                    <wm-form-field display-name="Read Status" show="false" primary-key="false" generator="null" key="readStatus" type="integer" is-related="false" readonly="false" required="false" default-value="1" placeholder="Enter value"
+                                    multiple="false" regexp=".*"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-form-action key="save" display-name="DONE" show="true" class="btn-primary" iconclass="glyphicon glyphicon-ok" action="save()" type="button" update-mode="true"></wm-form-action>
+                    </wm-liveform>
+                </wm-segment-content>
+            </wm-segmented-control>
+        </wm-page-content>
+    </wm-content>
+</wm-page>
+</script>

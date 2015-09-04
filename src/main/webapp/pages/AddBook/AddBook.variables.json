@@ -1,0 +1,368 @@
+{
+	"getISBNdata": {
+		"name": "getISBNdata",
+		"type": "isbnLookup.RootResponse",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "q",
+						"type": "string",
+						"value": "bind:\"isbn:\"+Widgets.barcodescanner.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "isbnLookup",
+		"operation": "invoke",
+		"operationType": "get",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "Javascript",
+		"serviceType": "RestService",
+		"wmServiceOperationInfo": {
+			"methodType": "get",
+			"name": "invoke",
+			"relativePath": "/isbnLookup/invoke/",
+			"consumes": [
+				"text/xml"
+			],
+			"parameters": [
+				{
+					"name": "q",
+					"parameterType": "query"
+				}
+			]
+		},
+		"category": "wm.ServiceVariable",
+		"_id": "wm-getISBNdata-wm.ServiceVariable-1440208653898"
+	},
+	"scanISBNData": {
+		"name": "scanISBNData",
+		"owner": "Page",
+		"dataSet": {
+			"data": {
+				"text": "BAR CODE",
+				"format": "TEXT",
+				"cancelled": false
+			}
+		},
+		"dataBinding": {},
+		"service": "scan",
+		"operation": "scanBarCode",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"onSuccess": "getISBNdata",
+		"vibrationtime": 2,
+		"category": "wm.MobileVariable",
+		"_id": "wm-scanISBNData-wm.MobileVariable-1440209455530"
+	},
+	"uploadImage": {
+		"name": "uploadImage",
+		"owner": "Page",
+		"dataSet": {
+			"name": "",
+			"path": "",
+			"size": 0,
+			"type": ""
+		},
+		"dataBinding": {
+			"remoteFolder": "/",
+			"localFile": "bind:Variables.takeBookPicture.dataSet.data"
+		},
+		"service": "file",
+		"operation": "upload",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"onSuccess": "Javascript",
+		"vibrationtime": 2,
+		"category": "wm.MobileVariable",
+		"_id": "wm-uploadImage-wm.MobileVariable-1440487072029"
+	},
+	"takeBookPicture": {
+		"name": "takeBookPicture",
+		"owner": "Page",
+		"dataSet": {
+			"data": "resources/images/imagelists/default-image.png"
+		},
+		"dataBinding": {},
+		"service": "device",
+		"operation": "capturePicture",
+		"startUpdate": false,
+		"imageQuality": 82,
+		"imageEncodingType": "1",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"onSuccess": "uploadImage",
+		"vibrationtime": 2,
+		"category": "wm.MobileVariable",
+		"_id": "wm-takeBookPicture-wm.MobileVariable-1440489898866"
+	},
+	"BookImage": {
+		"name": "BookImage",
+		"type": "string",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string",
+						"value": "resources/images/imagelists/Book-Cover.png"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-BookImage-wm.Variable-1440494773444"
+	},
+	"goToManualSegment": {
+		"name": "goToManualSegment",
+		"owner": "Page",
+		"operation": "gotoSegment",
+		"pageName": "AddBook",
+		"segmentName": "manualSegment",
+		"dataBinding": {
+			"pageName": "",
+			"segmentName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToManualSegment-wm.NavigationVariable-1440597249027"
+	},
+	"saveBook": {
+		"name": "saveBook",
+		"type": "Book",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "BOOK",
+				"fields": [
+					{
+						"name": "id",
+						"type": "number"
+					},
+					{
+						"name": "title",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.title"
+					},
+					{
+						"name": "author",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.author"
+					},
+					{
+						"name": "publisher",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.publisher"
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.description"
+					},
+					{
+						"name": "isbn",
+						"type": "string",
+						"value": "bind:Widgets.addBookForm.dataoutput.isbn"
+					},
+					{
+						"name": "imageUrl",
+						"type": "string",
+						"value": "bind:Variables.BookImage.dataSet.dataValue"
+					},
+					{
+						"name": "readStatus",
+						"type": "number",
+						"value": "bind:Widgets.addBookForm.dataoutput.readStatus"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "insert",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "goToPage-BookList",
+		"liveSource": "LIBRARY",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"filterFields": {},
+		"inputFields": {},
+		"category": "wm.LiveVariable",
+		"_id": "wm-saveBook-wm.LiveVariable-1440634987411",
+		"package": "com.books.library.Book",
+		"tableName": "BOOK",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "id",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "ID",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "identity",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "title",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "TITLE",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "author",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "AUTHOR",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "publisher",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "PUBLISHER",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "isbn",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "ISBN",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "imageUrl",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "IMAGE_URL",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "readStatus",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "READ_STATUS",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "-1"
+				},
+				{
+					"fieldName": "description",
+					"type": "text",
+					"hibernateType": "string",
+					"fullyQualifiedType": "text",
+					"columnName": "DESCRIPTION",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": "null",
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"id"
+			],
+			"entityName": "Book",
+			"fullyQualifiedName": "com.books.library.Book",
+			"tableType": "TABLE"
+		}
+	}
+}

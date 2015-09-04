@@ -1,0 +1,11 @@
+<wm-partial data-ng-controller="BookListPageController" name="partial1">
+    <wm-livelist listclass="list-group" itemclass="list-group-item" name="bookList" itemsperrow="3" dataset="bind:Variables.bookList.dataSet" on-click="bookListClick($event, $scope);goToPage-Details">
+        <wm-listtemplate layout="blank" name="listtemplate2">
+            <wm-container class="blank" data-template-ctr="true" name="container2" horizontalalign="center">
+                <wm-container name="container2_1" display="inline-block" paddingtop="5" paddingbottom="5" paddingright="5" paddingleft="5" backgroundcolor="rgba(0,0,0,0.3);">
+                    <wm-picture name="bookPic" picturesource="bind:Variables.bookList.dataSet[$i].imageUrl" on-click="bookPicClick($event, $scope);goToPage-Details" height="120px" class="bookImage"></wm-picture>
+                </wm-container>
+            </wm-container>
+        </wm-listtemplate>
+    </wm-livelist>
+</wm-partial>
