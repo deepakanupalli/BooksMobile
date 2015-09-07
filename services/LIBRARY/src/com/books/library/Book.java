@@ -34,12 +34,12 @@ public class Book  implements java.io.Serializable
 
 
 private Integer id;
-private String title;
 private String author;
-private String publisher;
-private String isbn;
 private String imageUrl;
+private String isbn;
+private String publisher;
 private Integer readStatus;
+private String title;
 private String description;
 
     public Book() {
@@ -62,17 +62,6 @@ private String description;
 
     
 
-    @Column(name="TITLE", nullable=false)
-    public String getTitle() {
-        return this.title;
-    }
-    
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    
-
     @Column(name="AUTHOR")
     public String getAuthor() {
         return this.author;
@@ -80,28 +69,6 @@ private String description;
     
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    
-
-    @Column(name="PUBLISHER")
-    public String getPublisher() {
-        return this.publisher;
-    }
-    
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    
-
-    @Column(name="ISBN")
-    public String getIsbn() {
-        return this.isbn;
-    }
-    
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
     }
 
     
@@ -117,6 +84,28 @@ private String description;
 
     
 
+    @Column(name="ISBN")
+    public String getIsbn() {
+        return this.isbn;
+    }
+    
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    
+
+    @Column(name="PUBLISHER")
+    public String getPublisher() {
+        return this.publisher;
+    }
+    
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    
+
     @Column(name="READ_STATUS", length=1)
     public Integer getReadStatus() {
         return this.readStatus;
@@ -128,7 +117,18 @@ private String description;
 
     
 
-    @Column(name="DESCRIPTION")
+    @Column(name="TITLE", nullable=false)
+    public String getTitle() {
+        return this.title;
+    }
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    
+
+    @Column(name="DESCRIPTION", length=2000)
     public String getDescription() {
         return this.description;
     }

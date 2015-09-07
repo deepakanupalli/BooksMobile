@@ -37,7 +37,7 @@ public class QueryExecutionController {
 
     @RequestMapping(value = "/queries/updateBookStatus", method = RequestMethod.GET)
     @ApiOperation(value = "Process request to execute queries")
-    public int executeUpdateBookStatus(@RequestParam("readStatus") java.lang.Integer readStatus, @RequestParam("id") java.lang.Integer id) throws QueryParameterMismatchException {
+    public int executeUpdateBookStatus(@RequestParam(value = "readStatus", required = false) java.lang.Integer readStatus, @RequestParam(value = "id", required = false) java.lang.Integer id) throws QueryParameterMismatchException {
         LOGGER.debug("Executing named query updateBookStatus");
         int result = queryService.executeUpdateBookStatus(readStatus, id);
         LOGGER.debug("got the result of named query {}", result);

@@ -3,6 +3,18 @@
     overflow: hidden;
     padding: 0 10px;
 }
+.app-livelist > ul {
+   overflow: visible;
+}
 .bookImage {
     border-radius: 5px;
+}
+
+.wm-app .list-group.book-list-items .list-group-item{
+    padding: 0 7px;
+    margin: 10px 0;
+}
+
+.wm-app .list-group.book-list-items .list-group-item .list-content {
+    min-height: 128px;
 }

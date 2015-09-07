@@ -9,13 +9,17 @@
   /*Missing variables*******************************************************************************/
   font-size: 1em;
   color: #fff;
-  font-family: 'Robotoregular';
+  font-family: 'Roboto-Regular' sans-serif;
   background-color: #15202d;
   /*******override the bootstrap styles since the style properties doesn't exist****/
   /*Modal*/
   /*Rating Widget*/
   /*Rating Widget*/
   /*Layout**************************************************************************/
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("fonts/Roboto-Regular-webfont.ttf") format("truetype");
 }
 .wm-app html {
   font-family: sans-serif;
@@ -1077,7 +1081,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .wm-app body {
-  font-family: Arial, sans-serif;
+  font-family: Roboto-Regular, sans-serif;
   font-size: 12px;
   line-height: 1.42857143;
   color: #333333;
@@ -1172,7 +1176,6 @@
 .wm-app .h4,
 .wm-app .h5,
 .wm-app .h6 {
-  font-family: Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1510,7 +1513,7 @@ a.wm-app .bg-danger:hover {
 .wm-app kbd,
 .wm-app pre,
 .wm-app samp {
-  font-family: Arial, sans-serif;
+  font-family: Roboto-Regular, sans-serif;
 }
 .wm-app code {
   padding: 2px 4px;
@@ -5802,7 +5805,7 @@ button.wm-app .close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-family: Arial, sans-serif;
+  font-family: Roboto-Regular, sans-serif;
   font-size: 11px;
   font-weight: normal;
   line-height: 1.4;
@@ -5909,7 +5912,7 @@ button.wm-app .close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: Arial, sans-serif;
+  font-family: Roboto-Regular, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.42857143;

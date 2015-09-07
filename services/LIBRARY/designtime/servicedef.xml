@@ -8,12 +8,12 @@
     <dataobjects>
         <dataobject javaType="com.books.library.Book">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
-            <element name="title" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="author" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="publisher" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="isbn" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="imageUrl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isbn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="publisher" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="readStatus" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="LIBRARYupdateBookStatusrtnType"/>
