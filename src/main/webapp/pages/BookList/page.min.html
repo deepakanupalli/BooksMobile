@@ -23,8 +23,9 @@ Application.$controller("BookListPageController", ["$scope", function($scope) {
 
 
 
-    $scope.bookListClick = function($event, $isolateScope) {
-        $scope.Variables.SELECTED_BOOK_ID.dataSet.dataValue = $isolateScope.item.id;
+    $scope.bookPicClick = function($event, $isolateScope) {
+        debugger;
+        $scope.Variables.SELECTED_BOOK_ID.dataSet.dataValue = $isolateScope.$parent.item.id;
     };
 
 }]);
@@ -107,10 +108,9 @@ var _BookListPage_Variables_ ={
 <wm-partial data-ng-controller="BookListPageController" name="partial1">
     <wm-livelist listclass="list-group book-list-items" itemclass="list-group-item" name="bookList" itemsperrow="3" dataset="bind:Variables.bookList.dataSet" on-click="bookListClick($event, $scope);goToPage-Details">
         <wm-listtemplate layout="blank" name="listtemplate2">
-            <wm-container class="list-content" data-template-ctr="true" name="container2" horizontalalign="center" width="auto" backgroundcolor="rgba(0,0,0,0.3);" height="130px">
-                <wm-container name="container2_1" display="inline-block" paddingtop="5" paddingbottom="5" paddingright="5" paddingleft="5" height="100%">
-                    <wm-picture name="bookPic" picturesource="bind:Variables.bookList.dataSet[$i].imageUrl" on-click="bookPicClick($event, $scope);goToPage-Details" class="bookImage" width="100%" height="100%"></wm-picture>
-                </wm-container>
+            <wm-container name="container2_1" display="flex" width="100%" class="list-content">
+                <wm-picture name="bookPic" picturesource="bind:Variables.bookList.dataSet[$i].imageUrl" on-click="bookPicClick($event, $scope);goToPage-Details" class="bookImage" backgroundcolor="rgba(13, 21, 28, 0.8)" paddingleft="5" paddingtop="5" paddingbottom="5"
+                paddingright="5"></wm-picture>
             </wm-container>
         </wm-listtemplate>
     </wm-livelist>

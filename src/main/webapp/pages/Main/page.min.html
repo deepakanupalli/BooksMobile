@@ -865,7 +865,7 @@ var _MainPage_Variables_ ={
 <script id="Main.html" type="text/ng-template">
 <wm-page data-ng-controller="MainPageController" name="page1">
     <wm-mobile-navbar name="mobile_navbar1" title="MY BOOKS" backbutton="false" backgroundsize="10px, 10px" backgroundposition="center center">
-        <wm-button class="btn-transparent" caption="" type="button" name="addBtn" on-click="goToPage-AddBook" backgroundrepeat="no-repeat" iconclass="fa fa-plus fa-lg"></wm-button>
+        <wm-button class="btn-transparent" caption="" type="button" name="addBtn" on-click="goToPage-AddBook" backgroundrepeat="no-repeat" iconurl="resources/images/imagelists/Icon_add .png" iconwidth="25px"></wm-button>
     </wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
@@ -873,8 +873,8 @@ var _MainPage_Variables_ ={
                 <wm-segment-content caption="ALL" name="allBookSegment">
                     <wm-container name="noBookContainer" show="bind:Variables.allBooks.dataSet.data.length === 0">
                         <wm-container name="container1" horizontalalign="center" marginbottom="20">
-                            <wm-button class="btn-default" caption="" type="button" name="button1" iconclass="glyphicon glyphicon-plus" paddingtop="40" paddingbottom="40" paddingleft="30" paddingright="30" fontsize="2" fontunit="em" display="inline-block"
-                            textalign="center" backgroundcolor="rgba(0,0,0,0.3)" color="#fff" borderbottom="0" bordertop="0" borderright="0" borderleft="0" margintop="20" bordercolor="#020E1D" on-click="goToPage-AddBook"></wm-button>
+                            <wm-button class="btn-default" caption="" type="button" name="button1" paddingtop="40" paddingbottom="40" paddingleft="30" paddingright="30" fontsize="2" fontunit="em" display="inline-block" textalign="center" backgroundcolor="rgba(0,0,0,0.3)"
+                            color="#fff" borderbottom="0" bordertop="0" borderright="0" borderleft="0" margintop="20" bordercolor="#020E1D" on-click="goToPage-AddBook" iconurl="resources/images/imagelists/Icon_add .png"></wm-button>
                         </wm-container>
                         <wm-container name="container6" horizontalalign="center">
                             <wm-label name="label1" caption="You haven't  added any books yet."></wm-label>

@@ -15,7 +15,7 @@
                     margintop="20" marginbottom="20"></wm-container>
                     <wm-liveform name="addBookForm" dataset="bind:Variables.LIBRARYBookData.dataSet" defaultmode="Edit" insertmessage="Book added successfully" novalidate="true" on-success="goToPage-Main" on-beforeservicecall="addBookFormBeforeservicecall($event, $operation, $data)"
                     show="true" captionposition="top">
-                        <wm-layoutgrid name="layoutgrid1">
+                        <wm-layoutgrid name="layoutgrid1" class="app-list">
                             <wm-gridrow show="hide" name="gridrow1">
                                 <wm-gridcolumn name="show" columnwidth="12">
                                     <wm-form-field display-name="Image Url" show="false" primary-key="false" generator="null" key="imageUrl" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter value" multiple="false"
@@ -23,31 +23,31 @@
                                 </wm-gridcolumn>
                             </wm-gridrow>
                             <wm-gridrow show="show" name="gridrow2">
-                                <wm-gridcolumn name="show" columnwidth="12">
+                                <wm-gridcolumn name="show" columnwidth="12" fontunit="em" fontsize="0.87">
                                     <wm-form-field display-name="Title" show="true" primary-key="false" generator="null" key="title" type="string" maxvalue="255" is-related="false" readonly="false" required="true" placeholder="Enter Title" class="col-xs-12"
                                     multiple="false" regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.title"></wm-form-field>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                             <wm-gridrow show="show" name="gridrow3">
-                                <wm-gridcolumn name="show" columnwidth="12">
+                                <wm-gridcolumn name="show" columnwidth="12" fontsize="0.87" fontunit="em">
                                     <wm-form-field display-name="Author" show="true" primary-key="false" generator="null" key="author" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter Author" multiple="false"
                                     regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.authors.join(',')"></wm-form-field>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                             <wm-gridrow show="show" name="gridrow4">
-                                <wm-gridcolumn name="show" columnwidth="12">
+                                <wm-gridcolumn name="show" columnwidth="12" fontsize="0.87" fontunit="em">
                                     <wm-form-field display-name="Publisher" show="true" primary-key="false" generator="null" key="publisher" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter Publisher" multiple="false"
                                     regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.publisher"></wm-form-field>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                             <wm-gridrow show="show" name="gridrow5">
-                                <wm-gridcolumn name="show" columnwidth="12">
+                                <wm-gridcolumn name="show" columnwidth="12" fontsize="0.87" fontunit="em">
                                     <wm-form-field display-name="ISBN" show="true" primary-key="false" generator="null" key="isbn" type="string" maxvalue="255" is-related="false" readonly="false" required="false" placeholder="Enter ISBN" multiple="false"
                                     regexp=".*" default-value="bind:Widgets.barcodescanner.datavalue"></wm-form-field>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                             <wm-gridrow show="show" name="gridrow6">
-                                <wm-gridcolumn name="show" columnwidth="12">
+                                <wm-gridcolumn name="show" columnwidth="12" fontsize="0.87" fontunit="em">
                                     <wm-form-field display-name="Description" show="true" primary-key="false" generator="null" key="description" type="string" maxvalue="255" is-related="false" readonly="false" required="false" widget-type="Textarea" placeholder="Add Description"
                                     multiple="false" regexp=".*" default-value="bind:Variables.getISBNdata.dataSet.items[0].volumeInfo.description" height="auto"></wm-form-field>
                                 </wm-gridcolumn>

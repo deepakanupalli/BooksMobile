@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.books" version="0.0.6">
+<widget id="com.books" version="0.0.7">
     <name>Books</name>
     <description>Helps to track your book wishlist, current reading books and your book collection.</description>
     <author email="deepak.anupalli@wavemaker.com" href="">
@@ -12,11 +12,35 @@
     <access origin="https://studio8.wavemakeronline.com/run-lbj3xvhxwy/BooksMobile/*"/>
     <allow-intent href="https://*/*"/>
     <allow-intent href="http://*/*"/>
+    <feature name="DatePicker">
+        <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin"/>
+    </feature>
+    <feature name="DatePicker">
+        <param name="ios-package" value="DatePicker"/>
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device"/>
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice"/>
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
+    </feature>
+    <feature name="File">
+        <param name="ios-package" value="CDVFile"/>
+    </feature>
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer"/>
     </feature>
     <feature name="FileTransfer">
         <param name="ios-package" value="CDVFileTransfer"/>
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen"/>
     </feature>
     <feature name="Capture">
         <param name="android-package" value="org.apache.cordova.mediacapture.Capture"/>
@@ -30,41 +54,17 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner"/>
     </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
+    <feature name="Vibrate">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration"/>
     </feature>
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen"/>
+    <feature name="Vibrate">
+        <param name="ios-package" value="CDVVibration"/>
     </feature>
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
     </feature>
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera"/>
-    </feature>
-    <feature name="File">
-        <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
-    </feature>
-    <feature name="File">
-        <param name="ios-package" value="CDVFile"/>
-    </feature>
-    <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device"/>
-    </feature>
-    <feature name="Device">
-        <param name="ios-package" value="CDVDevice"/>
-    </feature>
-    <feature name="DatePicker">
-        <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin"/>
-    </feature>
-    <feature name="DatePicker">
-        <param name="ios-package" value="DatePicker"/>
-    </feature>
-    <feature name="Vibrate">
-        <param name="android-package" value="org.apache.cordova.vibration.Vibration"/>
-    </feature>
-    <feature name="Vibrate">
-        <param name="ios-package" value="CDVVibration"/>
     </feature>
     <platform name="android">
         <splash density="land-ldpi" height="0" src="resources/images/logos/android/books_splash_screen.png" width="0"/>

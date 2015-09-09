@@ -458,8 +458,8 @@ var _DetailsPage_Variables_ ={
 </script>
 <script id="Details.html" type="text/ng-template">
 <wm-page data-ng-controller="DetailsPageController" name="page1">
-    <wm-mobile-navbar name="mobile_navbar1" title="Details">
-        <wm-button class="btn-transparent" caption="" type="button" name="deleteBtn" iconclass="fa fa-trash" fontweight="bold" on-click="vibrate;deleteBook" show="true"></wm-button>
+    <wm-mobile-navbar name="mobile_navbar1" title="Details" backbuttoniconclass="glyphicon glyphicon-menu-left">
+        <wm-button class="btn-transparent" caption="" type="button" name="deleteBtn" fontweight="bold" on-click="vibrate;deleteBook" show="true" iconurl="resources/images/imagelists/icon_delete.png"></wm-button>
     </wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
@@ -475,12 +475,12 @@ var _DetailsPage_Variables_ ={
                 </wm-gridrow>
                 <wm-gridrow name="gridrow1">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn1" horizontalalign="center">
-                        <wm-label name="label1" caption="bind:Variables.book.dataSet.data[$i].title" fontweight="bold" fontunit="em" class="h3" width="250"></wm-label>
+                        <wm-label name="label1" caption="bind:Variables.book.dataSet.data[$i].title" fontunit="em" class="h3" width="250" fontsize="1.15"></wm-label>
                     </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow2">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn4" horizontalalign="center">
-                        <wm-label name="label2" caption="bind:'by '+ Variables.book.dataSet.data[$i].author"></wm-label>
+                        <wm-label name="label2" caption="bind:'by '+ Variables.book.dataSet.data[$i].author" fontsize="0.87" fontunit="em"></wm-label>
                     </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow3">
@@ -490,9 +490,10 @@ var _DetailsPage_Variables_ ={
                 </wm-gridrow>
             </wm-layoutgrid>
             <wm-container name="container3" paddingleft="10" paddingright="10">
-                <wm-select name="readStatus" dataset="bind:Variables.READ_STATUS_ENUM.dataSet" datafield="value" displayfield="label" datavalue="bind:Variables.book.dataSet.data[$i].readStatus" on-change="updateBookStatus" margintop="20" marginbottom="20"></wm-select>
-                <wm-label name="label3" caption="Description" class="h3"></wm-label>
-                <wm-html name="html1" content="bind:Variables.book.dataSet.data[$i].description" fontsize="0.8" fontunit="em">bind:Variables.book.dataSet.data[$i].description</wm-html>
+                <wm-select name="readStatus" dataset="bind:Variables.READ_STATUS_ENUM.dataSet" datafield="value" displayfield="label" datavalue="bind:Variables.book.dataSet.data[$i].readStatus" on-change="updateBookStatus" margintop="20" marginbottom="20"
+                color="#BCBDBB" backgroundcolor="#273647" paddingtop=".5" paddingbottom=".5" paddingunit="em"></wm-select>
+                <wm-label name="label3" caption="Description" class="h3" color="#BCBDBB" fontsize="0.92" fontunit="em" paddingtop="0" paddingbottom="0" paddingleft="1.2" paddingright="1.2" paddingunit="em"></wm-label>
+                <wm-html name="html1" content="bind:Variables.book.dataSet.data[$i].description" fontsize="0.7" fontunit="em" color="#BCBDBB" paddingtop="0" paddingleft="1.5" paddingright="1.5" paddingbottom="0" paddingunit="em" class="para">bind:Variables.book.dataSet.data[$i].description</wm-html>
             </wm-container>
         </wm-page-content>
     </wm-content>

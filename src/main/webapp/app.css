@@ -7,14 +7,31 @@
    overflow: visible;
 }
 .bookImage {
-    border-radius: 5px;
+    border-radius: 0;
+    max-height: 100%;
+    max-width: 100%;
 }
 
-.wm-app .list-group.book-list-items .list-group-item{
-    padding: 0 7px;
-    margin: 10px 0;
+.wm-app .list-group.book-list-items .list-group-item  {
+    padding: 0 6pt;
+    margin: 10pt 0;
+    
 }
 
 .wm-app .list-group.book-list-items .list-group-item .list-content {
-    min-height: 128px;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100pt;
+}
+.wm-app .add-list .form-group .form-control {
+    width: 100%;
+}
+.wm-app .para {
+    line-height: 165%;
+}
+
+::selection, a::selection {
+    background-color: rgba(0, 0, 0, 0.298039);
+    color: #fff;
 }
