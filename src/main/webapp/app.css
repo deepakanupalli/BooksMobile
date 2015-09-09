@@ -7,7 +7,7 @@
    overflow: visible;
 }
 .bookImage {
-    border-radius: 0;
+    border-radius: 2pt;
     max-height: 100%;
     max-width: 100%;
 }
@@ -29,6 +29,10 @@
 }
 .wm-app .para {
     line-height: 165%;
+}
+
+.wm-app img {
+    border-radius: 3pt;
 }
 
 ::selection, a::selection {

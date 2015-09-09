@@ -499,6 +499,7 @@
 		"_id": "wm-READ_STATUS_ENUM-wm.Variable-1440636299098"
 	},
 	"goToPage-ProfilePage": {
+		"name": "goToPage-ProfilePage",
 		"owner": "App",
 		"operation": "gotoPage",
 		"pageName": "ProfilePage",

@@ -12,17 +12,23 @@
     <access origin="https://studio8.wavemakeronline.com/run-lbj3xvhxwy/BooksMobile/*"/>
     <allow-intent href="https://*/*"/>
     <allow-intent href="http://*/*"/>
-    <feature name="DatePicker">
-        <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin"/>
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.mediacapture.Capture"/>
     </feature>
-    <feature name="DatePicker">
-        <param name="ios-package" value="DatePicker"/>
+    <feature name="Capture">
+        <param name="ios-package" value="CDVCapture"/>
     </feature>
-    <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device"/>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
     </feature>
-    <feature name="Device">
-        <param name="ios-package" value="CDVDevice"/>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen"/>
+    </feature>
+    <feature name="Vibrate">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration"/>
+    </feature>
+    <feature name="Vibrate">
+        <param name="ios-package" value="CDVVibration"/>
     </feature>
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
@@ -36,17 +42,17 @@
     <feature name="FileTransfer">
         <param name="ios-package" value="CDVFileTransfer"/>
     </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
+    <feature name="DatePicker">
+        <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin"/>
     </feature>
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen"/>
+    <feature name="DatePicker">
+        <param name="ios-package" value="DatePicker"/>
     </feature>
-    <feature name="Capture">
-        <param name="android-package" value="org.apache.cordova.mediacapture.Capture"/>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device"/>
     </feature>
-    <feature name="Capture">
-        <param name="ios-package" value="CDVCapture"/>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice"/>
     </feature>
     <feature name="BarcodeScanner">
         <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner"/>
@@ -54,17 +60,17 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner"/>
     </feature>
-    <feature name="Vibrate">
-        <param name="android-package" value="org.apache.cordova.vibration.Vibration"/>
-    </feature>
-    <feature name="Vibrate">
-        <param name="ios-package" value="CDVVibration"/>
-    </feature>
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
     </feature>
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera"/>
+    </feature>
+    <feature name="AppVersion">
+        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
+    </feature>
+    <feature name="AppVersion">
+        <param name="ios-package" value="AppVersion"/>
     </feature>
     <platform name="android">
         <splash density="land-ldpi" height="0" src="resources/images/logos/android/books_splash_screen.png" width="0"/>

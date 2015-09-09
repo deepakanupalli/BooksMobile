@@ -8,7 +8,8 @@
                 <wm-gridrow name="gridrow5">
                     <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn1_1">
                         <wm-container name="container1">
-                            <wm-container name="bgContainer" backgroundrepeat="no-repeat" horizontalalign="center" paddingtop="5" paddingright="5" paddingbottom="5" paddingleft="5" backgroundcolor="rgba(0,0,0,0.3);" display="inline-block" margintop="50" marginbottom="40">
+                            <wm-container name="bgContainer" backgroundrepeat="no-repeat" horizontalalign="center" paddingtop="5" paddingright="5" paddingbottom="5" paddingleft="5" backgroundcolor="rgba(0,0,0,0.3);" display="inline-block" margintop="40" marginbottom="25"
+                            class="bg-image-container">
                                 <wm-picture name="picture1" height="150px" picturesource="bind:Variables.book.dataSet.data[$i].imageUrl"></wm-picture>
                             </wm-container>
                         </wm-container>
@@ -16,12 +17,12 @@
                 </wm-gridrow>
                 <wm-gridrow name="gridrow1">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn1" horizontalalign="center">
-                        <wm-label name="label1" caption="bind:Variables.book.dataSet.data[$i].title" fontunit="em" class="h3" width="250" fontsize="1.15"></wm-label>
+                        <wm-label name="label1" caption="bind:Variables.book.dataSet.data[$i].title" fontunit="em" class="h3" width="250" fontsize="1" margintop="5" marginbottom="5"></wm-label>
                     </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow2">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn4" horizontalalign="center">
-                        <wm-label name="label2" caption="bind:'by '+ Variables.book.dataSet.data[$i].author" fontsize="0.87" fontunit="em"></wm-label>
+                        <wm-label name="label2" caption="bind:'by '+ Variables.book.dataSet.data[$i].author" fontsize="0.87" fontunit="em" marginbottom="10"></wm-label>
                     </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow3">
