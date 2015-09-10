@@ -13,6 +13,8 @@
 
 .bookImage {
     border-radius: 7pt;
+    min-width:35pt;
+    min-height:50pt;
     max-height: 100%;
     max-width: 100%;
 }
@@ -32,6 +34,11 @@
     box-sizing: border-box;
     height: 100pt;
 }
+
+.wm-app .list-group-item.active, .wm-app .list-group-item.active:hover, .wm-app .list-group-item.active:focus {
+    background-color: rgba(0, 0, 0, 0.298039);
+}
+
 .wm-app .add-list .form-group .form-control {
     width: 100%;
 }

@@ -411,6 +411,20 @@ var _AddBookPage_Variables_ ={
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -420,6 +434,31 @@ var _AddBookPage_Variables_ ={
 			"fullyQualifiedName": "com.books.library.Book",
 			"tableType": "TABLE"
 		}
+	},
+	"showProcessing": {
+		"name": "showProcessing",
+		"type": "boolean",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": true
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "boolean"
+					}
+				],
+				"type": "object",
+				"isList": false
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-showProcessing-wm.Variable-1441879894270"
 	}
 }
 </script>

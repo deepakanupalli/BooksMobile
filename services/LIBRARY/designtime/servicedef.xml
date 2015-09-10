@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LIBRARY" CRUDService="true" type="DataService" springFile="LIBRARY.spring.xml">
+    <operation operationType="nativequery" name="updateBookRating">
+        <parameter name="rating" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="LIBRARYupdateBookRatingrtnType" isList="false"/>
+    </operation>
     <operation operationType="nativequery" name="updateBookStatus">
         <parameter name="readStatus" typeRef="java.lang.Integer" isList="false"/>
         <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
@@ -15,7 +20,10 @@
             <element name="readStatus" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
             <element name="title" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rating" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="LIBRARYupdateBookStatusrtnType"/>
+        <dataobject javaType="LIBRARYupdateRatingrtnType"/>
+        <dataobject javaType="LIBRARYupdateBookRatingrtnType"/>
     </dataobjects>
 </service>

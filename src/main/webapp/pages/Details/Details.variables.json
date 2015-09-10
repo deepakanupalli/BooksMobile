@@ -53,7 +53,7 @@
 		"maxResults": 20,
 		"designMaxResults": 10,
 		"operation": "read",
-		"startUpdate": true,
+		"startUpdate": false,
 		"autoUpdate": true,
 		"inFlightBehavior": "executeLast",
 		"transformationRequired": false,
@@ -179,6 +179,20 @@
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -188,7 +202,7 @@
 			"fullyQualifiedName": "com.books.library.Book",
 			"tableType": "TABLE"
 		},
-		"bindCount": 1
+		"bindCount": 0
 	},
 	"deleteBook": {
 		"name": "deleteBook",
@@ -345,6 +359,20 @@
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -411,12 +439,54 @@
 		"operation": "updateBookStatus",
 		"operationType": "nativequery",
 		"startUpdate": false,
-		"autoUpdate": true,
+		"autoUpdate": false,
 		"inFlightBehavior": "executeLast",
 		"transformationRequired": false,
 		"serviceType": "DataService",
 		"category": "wm.ServiceVariable",
 		"isDefault": true,
 		"_id": "wm-updateBookStatus-LIBRARYUpdateBookStatus-wm.ServiceVariable-1440656063785"
+	},
+	"updateBookRating": {
+		"name": "updateBookRating",
+		"type": "LIBRARYupdateBookRatingrtnType",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "rating",
+						"isList": false,
+						"value": "bind:Widgets.rating1.datavalue"
+					},
+					{
+						"name": "id",
+						"isList": false,
+						"value": "bind:Variables.SELECTED_BOOK_ID.dataSet.dataValue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "LIBRARY",
+		"operation": "updateBookRating",
+		"operationType": "nativequery",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "DataService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"_id": "wm-updateBookRating-LIBRARYUpdateBookRating-wm.ServiceVariable-1441880458480"
 	}
 }

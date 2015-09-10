@@ -9,7 +9,7 @@
                     <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn1_1">
                         <wm-container name="container1">
                             <wm-container name="bgContainer" backgroundrepeat="no-repeat" horizontalalign="center" paddingtop="5" paddingright="5" paddingbottom="5" paddingleft="5" backgroundcolor="rgba(0,0,0,0.3);" display="inline-block" margintop="40" marginbottom="25"
-                            class="bg-image-container">
+                            class="bg-image-container" backgroundimage="resources/images/imagelists/spinner-small.gif" backgroundposition="center,center">
                                 <wm-picture name="picture1" height="150px" picturesource="bind:Variables.book.dataSet.data[$i].imageUrl"></wm-picture>
                             </wm-container>
                         </wm-container>
@@ -27,7 +27,7 @@
                 </wm-gridrow>
                 <wm-gridrow name="gridrow3">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn7" horizontalalign="center">
-                        <wm-rating name="rating1" datavalue="3" iconsize="1.2em"></wm-rating>
+                        <wm-rating name="rating1" datavalue="bind:Variables.book.dataSet.data[$i].rating" iconsize="1.2em" on-change="updateBookRating"></wm-rating>
                     </wm-gridcolumn>
                 </wm-gridrow>
             </wm-layoutgrid>

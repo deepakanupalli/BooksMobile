@@ -28,6 +28,7 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name="BOOK"
+    ,schema="LIBRARY"
 )
 public class Book  implements java.io.Serializable
  {
@@ -41,6 +42,7 @@ private String publisher;
 private Integer readStatus;
 private String title;
 private String description;
+private Integer rating;
 
     public Book() {
     }
@@ -135,6 +137,17 @@ private String description;
     
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    
+
+    @Column(name="RATING", length=1)
+    public Integer getRating() {
+        return this.rating;
+    }
+    
+    public void setRating(Integer rating) {
+        this.rating = rating;
     }
 
 

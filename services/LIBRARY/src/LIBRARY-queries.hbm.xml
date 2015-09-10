@@ -6,4 +6,9 @@
             update BOOK set READ_STATUS = :readStatus where ID = :id
         ]]>
     </sql-query>
+    <sql-query name="updateBookRating">
+        <![CDATA[
+            update BOOK set RATING=:rating where ID=:id
+        ]]>
+    </sql-query>
 </hibernate-mapping>

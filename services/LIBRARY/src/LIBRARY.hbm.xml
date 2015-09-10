@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.books.library">
-    <class entity-name="com.books.library.Book" table="BOOK">
+    <class entity-name="com.books.library.Book" table="BOOK" schema="LIBRARY">
         <id name="id" type="integer">
             <column name="ID" length="255" not-null="true" precision="19"/>
             <generator class="identity"/>
@@ -26,6 +26,9 @@
         </property>
         <property name="description" type="text">
             <column name="DESCRIPTION" length="2000" not-null="false" precision="19"/>
+        </property>
+        <property name="rating" type="integer">
+            <column name="RATING" length="1" not-null="false" precision="19" default="'3'"/>
         </property>
     </class>
 </hibernate-mapping>

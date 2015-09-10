@@ -1,6 +1,17 @@
 {
 	"methods": [{
 		"operationType": "nativequery",
+		"name": "updateBookRating",
+		"parameters": [{
+			"name": "rating",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "LIBRARYupdateBookRatingrtnType"
+	}, {
+		"operationType": "nativequery",
 		"name": "updateBookStatus",
 		"parameters": [{
 			"name": "readStatus",

@@ -88,7 +88,7 @@ var _DetailsPage_Variables_ ={
 		"maxResults": 20,
 		"designMaxResults": 10,
 		"operation": "read",
-		"startUpdate": true,
+		"startUpdate": false,
 		"autoUpdate": true,
 		"inFlightBehavior": "executeLast",
 		"transformationRequired": false,
@@ -214,6 +214,20 @@ var _DetailsPage_Variables_ ={
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -223,7 +237,7 @@ var _DetailsPage_Variables_ ={
 			"fullyQualifiedName": "com.books.library.Book",
 			"tableType": "TABLE"
 		},
-		"bindCount": 1
+		"bindCount": 0
 	},
 	"deleteBook": {
 		"name": "deleteBook",
@@ -380,6 +394,20 @@ var _DetailsPage_Variables_ ={
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -446,13 +474,55 @@ var _DetailsPage_Variables_ ={
 		"operation": "updateBookStatus",
 		"operationType": "nativequery",
 		"startUpdate": false,
-		"autoUpdate": true,
+		"autoUpdate": false,
 		"inFlightBehavior": "executeLast",
 		"transformationRequired": false,
 		"serviceType": "DataService",
 		"category": "wm.ServiceVariable",
 		"isDefault": true,
 		"_id": "wm-updateBookStatus-LIBRARYUpdateBookStatus-wm.ServiceVariable-1440656063785"
+	},
+	"updateBookRating": {
+		"name": "updateBookRating",
+		"type": "LIBRARYupdateBookRatingrtnType",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "rating",
+						"isList": false,
+						"value": "bind:Widgets.rating1.datavalue"
+					},
+					{
+						"name": "id",
+						"isList": false,
+						"value": "bind:Variables.SELECTED_BOOK_ID.dataSet.dataValue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "LIBRARY",
+		"operation": "updateBookRating",
+		"operationType": "nativequery",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "DataService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"_id": "wm-updateBookRating-LIBRARYUpdateBookRating-wm.ServiceVariable-1441880458480"
 	}
 }
 </script>
@@ -468,7 +538,7 @@ var _DetailsPage_Variables_ ={
                     <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn1_1">
                         <wm-container name="container1">
                             <wm-container name="bgContainer" backgroundrepeat="no-repeat" horizontalalign="center" paddingtop="5" paddingright="5" paddingbottom="5" paddingleft="5" backgroundcolor="rgba(0,0,0,0.3);" display="inline-block" margintop="40" marginbottom="25"
-                            class="bg-image-container">
+                            class="bg-image-container" backgroundimage="resources/images/imagelists/spinner-small.gif" backgroundposition="center,center">
                                 <wm-picture name="picture1" height="150px" picturesource="bind:Variables.book.dataSet.data[$i].imageUrl"></wm-picture>
                             </wm-container>
                         </wm-container>
@@ -486,7 +556,7 @@ var _DetailsPage_Variables_ ={
                 </wm-gridrow>
                 <wm-gridrow name="gridrow3">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn7" horizontalalign="center">
-                        <wm-rating name="rating1" datavalue="3" iconsize="1.2em"></wm-rating>
+                        <wm-rating name="rating1" datavalue="bind:Variables.book.dataSet.data[$i].rating" iconsize="1.2em" on-change="updateBookRating"></wm-rating>
                     </wm-gridcolumn>
                 </wm-gridrow>
             </wm-layoutgrid>

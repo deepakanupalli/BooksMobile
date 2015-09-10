@@ -192,6 +192,20 @@
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -396,6 +410,20 @@
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -600,6 +628,20 @@
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [
@@ -805,6 +847,20 @@
 					"generator": null,
 					"isRelated": false,
 					"defaultValue": null
+				},
+				{
+					"fieldName": "rating",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "RATING",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 1,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "3"
 				}
 			],
 			"primaryKeys": [

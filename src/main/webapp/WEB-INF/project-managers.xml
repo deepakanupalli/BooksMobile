@@ -16,6 +16,8 @@
                     <list>
                         <value>com.books.library.Book</value>
                         <value>LIBRARYupdateBookStatusrtnType</value>
+                        <value>LIBRARYupdateRatingrtnType</value>
+                        <value>LIBRARYupdateBookRatingrtnType</value>
                     </list>
                 </entry>
                 <entry key="isbnLookup">

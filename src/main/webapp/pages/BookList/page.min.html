@@ -105,9 +105,9 @@ var _BookListPage_Variables_ ={
 <wm-partial data-ng-controller="BookListPageController" name="partial1">
     <wm-livelist listclass="list-group book-list-items" itemclass="list-group-item" name="bookList" itemsperrow="3" dataset="bind:Variables.bookList.dataSet" on-click="bookListClick($event, $scope);goToPage-Details">
         <wm-listtemplate layout="blank" name="listtemplate2">
-            <wm-container name="container2_1" display="flex" width="100%" class="list-content">
-                <wm-picture name="bookPic" picturesource="bind:Variables.bookList.dataSet[$i].imageUrl" on-click="bookPicClick($event, $scope);goToPage-Details" class="bookImage" backgroundcolor="rgba(13, 21, 28, 0.8)" paddingleft="5" paddingtop="5" paddingbottom="5"
-                paddingright="5"></wm-picture>
+            <wm-container name="container2_1" display="flex" width="100%" class="list-content" backgroundrepeat="no-repeat" backgroundposition="center, center">
+                <wm-picture name="bookPic" picturesource="bind:Variables.bookList.dataSet[$i].imageUrl" on-click="bookPicClick($event, $scope);goToPage-Details" class="bookImage" paddingleft="5" paddingtop="5" paddingbottom="5" paddingright="5" backgroundrepeat="no-repeat"
+                backgroundcolor="rgba(13, 21, 28, 0.8)" backgroundimage="resources/images/imagelists/spinner-small.gif" backgroundposition="center, center"></wm-picture>
             </wm-container>
         </wm-listtemplate>
     </wm-livelist>
