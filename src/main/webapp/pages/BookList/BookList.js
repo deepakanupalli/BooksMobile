@@ -17,10 +17,7 @@ Application.$controller("BookListPageController", ["$scope", function($scope) {
          */
     };
 
-
-
     $scope.bookPicClick = function($event, $isolateScope) {
-        debugger;
         $scope.Variables.SELECTED_BOOK_ID.dataSet.dataValue = $isolateScope.$parent.item.id;
     };
 

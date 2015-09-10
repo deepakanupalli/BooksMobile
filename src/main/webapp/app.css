@@ -3,6 +3,10 @@
     overflow: hidden;
     padding: 0 10px;
 }
+.wm-app .navbar img, .wm-app .navbar i {
+    position: relative;
+    top: -3px;
+ }
 .app-livelist > ul {
    overflow: visible;
 }

@@ -491,10 +491,10 @@ var _DetailsPage_Variables_ ={
                 </wm-gridrow>
             </wm-layoutgrid>
             <wm-container name="container3" paddingleft="10" paddingright="10">
-                <wm-select name="readStatus" dataset="bind:Variables.READ_STATUS_ENUM.dataSet" datafield="value" displayfield="label" datavalue="bind:Variables.book.dataSet.data[$i].readStatus" on-change="updateBookStatus" margintop="20" marginbottom="20"
+                <wm-select name="readStatus" dataset="bind:Variables.READ_STATUS_ENUM.dataSet" datafield="value" displayfield="label" datavalue="bind:Variables.book.dataSet.data[$i].readStatus" on-change="updateBookStatus" margintop="20" marginbottom="10"
                 color="#BCBDBB" backgroundcolor="#273647" paddingtop=".5" paddingbottom=".5" paddingunit="em"></wm-select>
                 <wm-label name="label3" caption="Description" class="h3" color="#BCBDBB" fontsize="0.92" fontunit="em" paddingtop="0" paddingbottom="0" paddingleft="1.2" paddingright="1.2" paddingunit="em"></wm-label>
-                <wm-html name="html1" content="bind:Variables.book.dataSet.data[$i].description" fontsize="0.7" fontunit="em" color="#BCBDBB" paddingtop="0" paddingleft="1.5" paddingright="1.5" paddingbottom="0" paddingunit="em" class="para">bind:Variables.book.dataSet.data[$i].description</wm-html>
+                <wm-html name="html1" content="bind:Variables.book.dataSet.data[$i].description" fontsize="0.7" fontunit="em" color="#BCBDBB" paddingtop="0" paddingleft="1.5" paddingright="1.5" paddingbottom="1.5" paddingunit="em" class="para">bind:Variables.book.dataSet.data[$i].description</wm-html>
             </wm-container>
         </wm-page-content>
     </wm-content>
